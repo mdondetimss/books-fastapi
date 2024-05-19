@@ -4,7 +4,7 @@ This lab guides you through creating a simple FastAPI application with a structu
 
 ## 1.Project Structure
 ```python
-my_fastapi_app/
+my-books-fastapi/
 ├── app/
 │ ├── init.py
 │ ├── main.py
@@ -101,12 +101,12 @@ app.include_router(books.router, prefix="/api")
 ```
 
 ## 8.This file indicates that the test directory is a Python package
-'''python
+```python
 from fastapi import FastAPI
 test/__init__.py
-'''
+```
 ## 9.Write tests for the /books endpoint, including sorting functionality.
-'''python
+```python
 import pytest
 from fastapi.testclient import TestClient
 from app.main import app  # Importing the FastAPI app instance from app/main.py
@@ -125,9 +125,9 @@ def test_get_books_default():
     assert response.status_code == 200
     books = response.json()
     assert len(books) > 0
-'''
-## 9.Run Test
-'''python
+```
+## 10.Run Test
+```python
 from fastapi import FastAPI
 pytest test/
 ```
